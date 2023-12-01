@@ -1,6 +1,6 @@
 # test-BirthdayCake
 
-纯前端项目，参考来自云游君的生日动画和烟火效果
+纯前端项目，参考来自@云游君(https://github.com/YunYouJun)
 
 ## 展示
 
@@ -10,19 +10,17 @@
 
 ![示例图片](src/assets/main.png)
 
-## Project Setup
+## 使用示例
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
-
 ```sh
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+## build
 
 ```sh
 npm run build
