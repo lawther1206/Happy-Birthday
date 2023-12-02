@@ -34,4 +34,8 @@ export default defineConfig({
       },
     },
   },
+  base: "/Happy-Birthday/",
+  build: {
+    outDir: "docs"
+  }
 });

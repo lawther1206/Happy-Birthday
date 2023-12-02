@@ -9,12 +9,8 @@ declare module 'vue' {
   export interface GlobalComponents {
     BirthdayCake: typeof import('./src/components/BirthdayCake.vue')['default']
     Components: typeof import('./src/components/index.vue')['default']
-    Dialog: typeof import('./src/components/Dialog.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
-    ElDialog: typeof import('element-plus/es')['ElDialog']
-    HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     LikeBtn: typeof import('./src/components/LikeBtn.vue')['default']
     TheWelcome: typeof import('./src/components/TheWelcome.vue')['default']
-    WelcomeItem: typeof import('./src/components/WelcomeItem.vue')['default']
   }
 }
