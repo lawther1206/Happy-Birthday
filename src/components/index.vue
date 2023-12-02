@@ -139,38 +139,39 @@ const regLog = (type) => {
 
 .clouds {
   background: white;
-  width: 2em;
-  height: 2em;
+  width: 10%;
+  height: 10%;
   border-radius: 100% 100% 0 0;
   position: relative;
-  top: -4em;
+  top: -20%;
   opacity: 0;
   transform: translate(0, 0);
   animation: cloudy 1s infinite linear forwards;
-  box-shadow: 5em 2em 0 -0.3em white, -2em 2em 0 0 white;
+  box-shadow: 50% 20% 0 -3% white, -20% 20% 0 0 white;
   &:before,
   &:after {
     content: "";
     position: absolute;
-    box-shadow: 5em 2em 0 -0.3em white, -2em 2em 0 white;
+    box-shadow: 50% 20% 0 -3% white, -20% 20% 0 white;
   }
   &:before {
-    width: 1.25em;
-    height: 1.25em;
+    width: 12.5%;
+    height: 12.5%;
     border-radius: 100% 100% 0 100%;
     background: white;
     left: -30%;
     bottom: 0;
   }
   &:after {
-    width: 1.5em;
-    height: 1.5em;
+    width: 15%;
+    height: 15%;
     border-radius: 100% 100% 100% 0;
     background: white;
     right: -30%;
     bottom: 0;
   }
 }
+
 
 .text {
   position: absolute;
