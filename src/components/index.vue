@@ -1,7 +1,7 @@
 <template>
   <div id="app-center">
     <div class="container">
-      <div clas="loading">
+      <div>
         <div class="rabbit"></div>
         <div class="clouds"></div>
         <div class="text-btn">
@@ -12,18 +12,23 @@
         </div>
         <div class="text">Loading...</div>
       </div>
+
       <div v-show="state.showloading" id="center">
         <div class="login-wrapper">
-          <div class="header">Birthday person</div>
-          <div class="form-wrapper">
-            <input
-              type="text"
-              name="username"
-              placeholder="是谁生日"
-              class="input-item"
-              v-model="state.form.username"
-            />
-            <div class="btn" @click="submitForm()">Login</div>
+          <div class="login-wrapper-center">
+            <div class="header">
+              <h1>Birthday person</h1>
+            </div>
+            <div class="form-wrapper">
+              <input
+                type="text"
+                name="username"
+                placeholder="是谁生日"
+                class="input-item"
+                v-model="state.form.username"
+              />
+              <div class="btn" @click="submitForm()">Login</div>
+            </div>
           </div>
         </div>
       </div>
@@ -68,139 +73,125 @@ const regLog = (type) => {
   background-color: #b78e81;
   width: 100vw;
   height: 100vh;
-}
-
-.long {
-  //加粗
-  font-weight: bold;
-  // 鼠标变手
-  cursor: pointer;
-  // flex布局中定义宽度固定不跟随屏幕变化，解决过度动画问题给一个宽度可以是百分比也可以是px，不能使用flex:1
-  flex-shrink: 0;
-  white-space: pre;
-}
-
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-}
-
-.loading {
-  width: 320px;
-  height: 180px;
-  background: #e2b29f;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: relative;
-}
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    .loading {
+      width: 320px;
+      height: 180px;
+      background: #e2b29f;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
 
-.rabbit {
-  width: 5em;
-  height: 3em;
-  background: #ffffff;
-  border-radius: 70% 90% 60% 50%;
-  position: relative;
-  box-shadow: -0.2em 1em 0 -0.75em #b78e81;
-  transform: translate(-2em, 0);
-  animation: hop 1s infinite linear;
-  z-index: 1;
-  &:before {
-    content: "";
-    position: absolute;
-    width: 1em;
-    height: 1em;
-    background: white;
-    border-radius: 100%;
-    top: 0.5em;
-    left: -0.3em;
-    box-shadow: 4em 0.4em 0 -0.35em #3f3334, 0.5em 1em 0 white,
-      4em 1em 0 -0.3em white, 4em 1em 0 -0.3em white, 4em 1em 0 -0.4em white;
-    animation: kick 1s infinite linear;
+    .rabbit {
+      width: 5em;
+      height: 3em;
+      background: #ffffff;
+      border-radius: 70% 90% 60% 50%;
+      position: relative;
+      box-shadow: -0.2em 1em 0 -0.75em #b78e81;
+      transform: translate(-2em, 0);
+      animation: hop 1s infinite linear;
+      z-index: 1;
+      &:before {
+        content: "";
+        position: absolute;
+        width: 1em;
+        height: 1em;
+        background: white;
+        border-radius: 100%;
+        top: 0.5em;
+        left: -0.3em;
+        box-shadow: 4em 0.4em 0 -0.35em #3f3334, 0.5em 1em 0 white,
+          4em 1em 0 -0.3em white, 4em 1em 0 -0.3em white, 4em 1em 0 -0.4em white;
+        animation: kick 1s infinite linear;
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        width: 0.75em;
+        height: 2em;
+        background: white;
+        border-radius: 50% 100% 0 0;
+        transform: rotate(-30deg);
+        right: 1em;
+        top: -1em;
+        border-top: 1px solid #f7f5f4;
+        border-left: 1px solid #f7f5f4;
+        box-shadow: -0.5em 0 0 -0.1em white;
+      }
+    }
+    .clouds {
+      background: white;
+      width: 10%;
+      height: 10%;
+      border-radius: 100% 100% 0 0;
+      position: relative;
+      top: -20%;
+      opacity: 0;
+      transform: translate(0, 0);
+      animation: cloudy 1s infinite linear forwards;
+      box-shadow: 50% 20% 0 -3% white, -20% 20% 0 0 white;
+      &:before,
+      &:after {
+        content: "";
+        position: absolute;
+        box-shadow: 50% 20% 0 -3% white, -20% 20% 0 white;
+      }
+      &:before {
+        width: 12.5%;
+        height: 12.5%;
+        border-radius: 100% 100% 0 100%;
+        background: white;
+        left: -30%;
+        bottom: 0;
+      }
+      &:after {
+        width: 15%;
+        height: 15%;
+        border-radius: 100% 100% 100% 0;
+        background: white;
+        right: -30%;
+        bottom: 0;
+      }
+    }
+    .text {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 2%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2em;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-family: fantasy;
+    }
+    .text-btn {
+      position: absolute;
+      left: -1em;
+      right: 0;
+      bottom: 10%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2em;
+      text-transform: uppercase;
+      // letter-spacing: 0.2em;
+      font-family: fantasy;
+      z-index: 10;
+    }
   }
-  &:after {
-    content: "";
-    position: absolute;
-    width: 0.75em;
-    height: 2em;
-    background: white;
-    border-radius: 50% 100% 0 0;
-    transform: rotate(-30deg);
-    right: 1em;
-    top: -1em;
-    border-top: 1px solid #f7f5f4;
-    border-left: 1px solid #f7f5f4;
-    box-shadow: -0.5em 0 0 -0.1em white;
-  }
-}
-
-.clouds {
-  background: white;
-  width: 10%;
-  height: 10%;
-  border-radius: 100% 100% 0 0;
-  position: relative;
-  top: -20%;
-  opacity: 0;
-  transform: translate(0, 0);
-  animation: cloudy 1s infinite linear forwards;
-  box-shadow: 50% 20% 0 -3% white, -20% 20% 0 0 white;
-  &:before,
-  &:after {
-    content: "";
-    position: absolute;
-    box-shadow: 50% 20% 0 -3% white, -20% 20% 0 white;
-  }
-  &:before {
-    width: 12.5%;
-    height: 12.5%;
-    border-radius: 100% 100% 0 100%;
-    background: white;
-    left: -30%;
-    bottom: 0;
-  }
-  &:after {
-    width: 15%;
-    height: 15%;
-    border-radius: 100% 100% 100% 0;
-    background: white;
-    right: -30%;
-    bottom: 0;
-  }
-}
-
-
-.text {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 2%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 2em;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  font-family: fantasy;
-}
-.text-btn {
-  position: absolute;
-  left: -1em;
-  right: 0;
-  bottom: 10%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 2em;
-  text-transform: uppercase;
-  // letter-spacing: 0.2em;
-  font-family: fantasy;
-  z-index: 10;
 }
 
 @keyframes hop {
@@ -246,6 +237,7 @@ const regLog = (type) => {
     transform: translate(0, 0);
   }
 }
+
 #center {
   .login-wrapper {
     background-color: #fff;
@@ -259,13 +251,20 @@ const regLog = (type) => {
     transform: translate(-50%, -50%);
     z-index: 99;
   }
+  .login-wrapper-center {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    height: 100%;
+  }
   .header {
-    font-size: 38px;
-    font-weight: bold;
+    // font-size: 38px;
+    // font-weight: bold;
     text-align: center;
-    line-height: 200px;
+    // line-height: 200px;
     font-family: fantasy;
     color: #b78e81;
+    margin-bottom: 20px;
   }
   .input-item {
     display: block;
