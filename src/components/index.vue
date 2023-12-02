@@ -199,6 +199,7 @@ const regLog = (type) => {
   text-transform: uppercase;
   // letter-spacing: 0.2em;
   font-family: fantasy;
+  z-index: 10;
 }
 
 @keyframes hop {
