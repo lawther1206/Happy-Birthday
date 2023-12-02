@@ -176,7 +176,7 @@ const regLog = (type) => {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 0.5em;
+  bottom: 2%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -190,7 +190,7 @@ const regLog = (type) => {
   position: absolute;
   left: -1em;
   right: 0;
-  bottom: 2.6em;
+  bottom: 10%;
   display: flex;
   align-items: center;
   justify-content: center;
