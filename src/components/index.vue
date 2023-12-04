@@ -6,9 +6,7 @@
         <div class="clouds"></div>
         <div class="text-btn">
           <div v-show="state.showloading"><i class="el-icon-loading"></i></div>
-          <el-button v-show="!state.showloading" @click="getInto"
-            >进入</el-button
-          >
+          <el-button v-show="!state.showloading" @click="getInto">进入</el-button>
         </div>
         <div class="text">Loading...</div>
       </div>
@@ -27,7 +25,7 @@
                 class="input-item"
                 v-model="state.form.username"
               />
-              <div class="btn" @click="submitForm()">Login</div>
+              <div class="btn" @click="submitForm">Login</div>
             </div>
           </div>
         </div>
@@ -76,18 +74,13 @@ const regLog = (type) => {
   position: relative;
   .container {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100%;
-    .loading {
-      width: 320px;
-      height: 180px;
-      background: #e2b29f;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
+
+    @media (min-width: 720px) {
+      flex-direction: row;
     }
 
     .rabbit {
@@ -100,6 +93,7 @@ const regLog = (type) => {
       transform: translate(-2em, 0);
       animation: hop 1s infinite linear;
       z-index: 1;
+
       &:before {
         content: "";
         position: absolute;
@@ -127,7 +121,13 @@ const regLog = (type) => {
         border-left: 1px solid #f7f5f4;
         box-shadow: -0.5em 0 0 -0.1em white;
       }
+
+      @media (min-width: 720px) {
+        width: 8em;
+        height: 4em;
+      }
     }
+
     .clouds {
       background: white;
       width: 10%;
@@ -139,12 +139,14 @@ const regLog = (type) => {
       transform: translate(0, 0);
       animation: cloudy 1s infinite linear forwards;
       box-shadow: 50% 20% 0 -3% white, -20% 20% 0 0 white;
+
       &:before,
       &:after {
         content: "";
         position: absolute;
         box-shadow: 50% 20% 0 -3% white, -20% 20% 0 white;
       }
+
       &:before {
         width: 12.5%;
         height: 12.5%;
@@ -153,6 +155,7 @@ const regLog = (type) => {
         left: -30%;
         bottom: 0;
       }
+
       &:after {
         width: 15%;
         height: 15%;
@@ -162,8 +165,9 @@ const regLog = (type) => {
         bottom: 0;
       }
     }
+
     .text {
-      position: absolute;
+      position: fixed;
       left: 0;
       right: 0;
       bottom: 2%;
@@ -175,9 +179,14 @@ const regLog = (type) => {
       text-transform: uppercase;
       letter-spacing: 0.2em;
       font-family: fantasy;
+
+      @media (min-width: 720px) {
+        bottom: 10%;
+      }
     }
+
     .text-btn {
-      position: absolute;
+      position: fixed;
       left: -1em;
       right: 0;
       bottom: 10%;
@@ -187,9 +196,12 @@ const regLog = (type) => {
       color: white;
       font-size: 2em;
       text-transform: uppercase;
-      // letter-spacing: 0.2em;
       font-family: fantasy;
       z-index: 10;
+
+      @media (min-width: 720px) {
+        bottom: 20%;
+      }
     }
   }
 }
@@ -244,7 +256,7 @@ const regLog = (type) => {
     width: 270px;
     height: 366px;
     border-radius: 15px;
-    padding: 0 50px;
+    padding: 0 20px;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -258,10 +270,7 @@ const regLog = (type) => {
     height: 100%;
   }
   .header {
-    // font-size: 38px;
-    // font-weight: bold;
     text-align: center;
-    // line-height: 200px;
     font-family: fantasy;
     color: #b78e81;
     margin-bottom: 20px;
@@ -276,7 +285,7 @@ const regLog = (type) => {
     font-size: 15px;
     outline: none;
   }
-  .input-item:placeholder {
+  .input-item::placeholder {
     text-transform: uppercase;
   }
   .btn {
