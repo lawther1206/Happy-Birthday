@@ -6,7 +6,9 @@
         <div class="clouds"></div>
         <div class="text-btn">
           <div v-show="state.showloading"><i class="el-icon-loading"></i></div>
-          <el-button v-show="!state.showloading" @click="getInto">进入</el-button>
+          <el-button v-show="!state.showloading" @click="getInto"
+            >进入</el-button
+          >
         </div>
         <div class="text">Loading...</div>
       </div>
@@ -166,25 +168,6 @@ const regLog = (type) => {
       }
     }
 
-    .text {
-      position: fixed;
-      left: 0;
-      right: 0;
-      bottom: 2%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 2em;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      font-family: fantasy;
-
-      @media (min-width: 720px) {
-        bottom: 10%;
-      }
-    }
-
     .text-btn {
       position: fixed;
       left: -1em;
@@ -194,13 +177,32 @@ const regLog = (type) => {
       align-items: center;
       justify-content: center;
       color: white;
-      font-size: 2em;
+      font-size: 12px;
       text-transform: uppercase;
       font-family: fantasy;
       z-index: 10;
 
       @media (min-width: 720px) {
         bottom: 20%;
+      }
+    }
+
+    .text {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 2%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 32px;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-family: fantasy;
+
+      @media (min-width: 720px) {
+        bottom: 10%;
       }
     }
   }
