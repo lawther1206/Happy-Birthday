@@ -1,6 +1,6 @@
 <template>
   <div class="center">
-    <div class="audio" @click="togglePlayback">
+    <div class="audio" @click="togglePlayback" v-show="!state.isShow">
       <Microphone v-if="birthdayMusic.isPlaying.value" />
       <Mute v-else />
     </div>
@@ -30,13 +30,11 @@ const state = reactive({
 const togglePlayback = () => {
   birthdayMusic.isPlaying.value ? birthdayMusic.pause() : birthdayMusic.play();
 };
-onMounted(() => {
-  birthdayMusic.play();
-});
 
 const showLogin = (name: string) => {
   state.name = name;
   state.isShow = !state.isShow;
+  togglePlayback();
 };
 </script>
 
