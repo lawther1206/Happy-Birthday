@@ -1,5 +1,10 @@
 <template>
   <div class="center">
+    <div class="audio" @click="togglePlayback" v-show="!state.isShow">
+      <Microphone v-if="birthdayMusic.isPlaying.value" />
+      <Mute v-else />
+    </div>
+
     <Login @showLogin="showLogin" v-if="state.isShow" />
     <div>
       <BirthdayCake v-if="!state.isShow" :name="state.name" />
@@ -8,23 +13,57 @@
 </template>
 
 <script setup lang="ts">
+import { Microphone, Mute } from "@element-plus/icons-vue";
 import { reactive } from "vue";
 
 import BirthdayCake from "@/components/BirthdayCake.vue";
 import Login from "@/components/index.vue";
+import { useSound } from "@vueuse/sound";
+
+const birthdayMusic = useSound("/audio/happy-birthday.mp3");
+
 const state = reactive({
   isShow: true,
   name: "",
 });
 
+const togglePlayback = () => {
+  birthdayMusic.isPlaying.value ? birthdayMusic.pause() : birthdayMusic.play();
+};
+
 const showLogin = (name: string) => {
   state.name = name;
   state.isShow = !state.isShow;
+  togglePlayback();
 };
 </script>
 
 <style scoped>
 .center {
   height: 100vh;
+}
+.audio {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  z-index: 999;
+  width: 24px;
+  color: #fff;
+}
+
+.rotate {
+  animation: zoomInAndOut 2s infinite;
+}
+
+@keyframes zoomInAndOut {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 </style>

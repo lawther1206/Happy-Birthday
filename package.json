@@ -10,6 +10,8 @@
     "type-check": "vue-tsc --noEmit -p tsconfig.app.json --composite false"
   },
   "dependencies": {
+    "@element-plus/icons-vue": "^2.3.1",
+    "@vueuse/sound": "^2.0.1",
     "element-plus": "^2.4.3",
     "unplugin-auto-import": "^0.17.1",
     "unplugin-vue-components": "^0.25.2",
