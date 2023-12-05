@@ -180,9 +180,9 @@ const regLog = (type) => {
       // font-family: fantasy;
       z-index: 10;
 
-      // @media (min-width: 720px) {
-      //   bottom: 20%;
-      // }
+      @media (max-width: 720px) {
+        bottom: 20%;
+      }
     }
 
     .text-loading {
@@ -198,9 +198,9 @@ const regLog = (type) => {
       text-transform: uppercase;
       letter-spacing: 0.2em;
       // font-family: fantasy;
-      // @media (min-width: 720px) {
-      //   bottom: 10%;
-      // }
+      @media (max-width: 720px) {
+        bottom: 10%;
+      }
     }
   }
 }
@@ -261,6 +261,10 @@ const regLog = (type) => {
     top: 50%;
     transform: translate(-50%, -50%);
     z-index: 99;
+    @media (max-width: 720px) {
+      width: 70vw;
+      height: 280px;
+    }
   }
   .login-wrapper-center {
     display: flex;
