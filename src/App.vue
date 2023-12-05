@@ -20,7 +20,7 @@ import BirthdayCake from "@/components/BirthdayCake.vue";
 import Login from "@/components/index.vue";
 import { useSound } from "@vueuse/sound";
 
-const birthdayMusic = useSound("/audio/happy-birthday.mp3");
+const birthdayMusic = useSound("/Happy-Birthday/audio/happy-birthday.mp3");
 
 const state = reactive({
   isShow: true,
