@@ -349,7 +349,7 @@ onMounted(() => {});
   z-index: 10;
   font-size: 38px;
   color: #fffeea;
-  font-family: fantasy;
+  // font-family: fantasy;
 }
 
 // Animation Fire

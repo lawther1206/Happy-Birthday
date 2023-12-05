@@ -10,15 +10,13 @@
             >进入</el-button
           >
         </div>
-        <div class="text">Loading...</div>
+        <div class="text-loading">Loading...</div>
       </div>
 
       <div v-show="state.showloading" id="center">
         <div class="login-wrapper">
           <div class="login-wrapper-center">
-            <div class="header">
-              <h1>Birthday person</h1>
-            </div>
+            <div class="header">Birthday person</div>
             <div class="form-wrapper">
               <input
                 type="text"
@@ -179,15 +177,15 @@ const regLog = (type) => {
       color: white;
       font-size: 12px;
       text-transform: uppercase;
-      font-family: fantasy;
+      // font-family: fantasy;
       z-index: 10;
 
-      @media (min-width: 720px) {
-        bottom: 20%;
-      }
+      // @media (min-width: 720px) {
+      //   bottom: 20%;
+      // }
     }
 
-    .text {
+    .text-loading {
       position: fixed;
       left: 0;
       right: 0;
@@ -199,11 +197,10 @@ const regLog = (type) => {
       font-size: 32px;
       text-transform: uppercase;
       letter-spacing: 0.2em;
-      font-family: fantasy;
-
-      @media (min-width: 720px) {
-        bottom: 10%;
-      }
+      // font-family: fantasy;
+      // @media (min-width: 720px) {
+      //   bottom: 10%;
+      // }
     }
   }
 }
@@ -273,8 +270,9 @@ const regLog = (type) => {
   }
   .header {
     text-align: center;
-    font-family: fantasy;
+    // font-family: fantasy;
     color: #b78e81;
+    font-size: 32px;
     margin-bottom: 20px;
   }
   .input-item {
