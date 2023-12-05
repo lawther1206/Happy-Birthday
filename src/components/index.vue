@@ -122,10 +122,6 @@ const regLog = (type) => {
         box-shadow: -0.5em 0 0 -0.1em white;
       }
 
-      @media (min-width: 720px) {
-        width: 8em;
-        height: 4em;
-      }
     }
 
     .clouds {

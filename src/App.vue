@@ -31,7 +31,7 @@ const togglePlayback = () => {
   birthdayMusic.isPlaying.value ? birthdayMusic.pause() : birthdayMusic.play();
 };
 onMounted(() => {
-  togglePlayback();
+  birthdayMusic.play();
 });
 
 const showLogin = (name: string) => {
