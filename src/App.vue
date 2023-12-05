@@ -1,6 +1,6 @@
 <template>
   <div class="center">
-    <div class="audio" @click="togglePlayback" v-show="!state.isShow">
+    <div class="audio" @click="togglePlayback">
       <Microphone v-if="birthdayMusic.isPlaying.value" />
       <Mute v-else />
     </div>
@@ -14,7 +14,7 @@
 
 <script setup lang="ts">
 import { Microphone, Mute } from "@element-plus/icons-vue";
-import { reactive } from "vue";
+import { reactive, onMounted } from "vue";
 
 import BirthdayCake from "@/components/BirthdayCake.vue";
 import Login from "@/components/index.vue";
@@ -30,11 +30,13 @@ const state = reactive({
 const togglePlayback = () => {
   birthdayMusic.isPlaying.value ? birthdayMusic.pause() : birthdayMusic.play();
 };
+onMounted(() => {
+  togglePlayback();
+});
 
 const showLogin = (name: string) => {
   state.name = name;
   state.isShow = !state.isShow;
-  togglePlayback();
 };
 </script>
 
