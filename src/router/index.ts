@@ -9,7 +9,7 @@ const home = () => import("@/views/Home/index.vue");
 
 const routes: Array<RouteRecordRaw> = [
   { path: "/", redirect: "/Happy-Birthday/home" },
-  { path: "/Happy-Birthday", redirect: "/Happy-Birthday/home" },
+  { path: "/Happy-Birthday", redirect: "/" },
   {
     path: "/Happy-Birthday/home",
     component: home,
@@ -27,8 +27,7 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: "/:path(.*)*",
-    name: "notFound",
-    component: home,
+    redirect: "/",
   },
 ];
 
