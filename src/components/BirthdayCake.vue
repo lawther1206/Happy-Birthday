@@ -347,7 +347,7 @@ onMounted(() => {});
   backface-visibility: hidden;
   animation: in 500ms 5s ease-out forwards;
   z-index: 10;
-  font-size: 38px;
+  font-size: 36px;
   color: #fffeea;
   // font-family: fantasy;
 }

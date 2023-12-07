@@ -10,7 +10,11 @@ declare module 'vue' {
     BirthdayCake: typeof import('./src/components/BirthdayCake.vue')['default']
     Components: typeof import('./src/components/index.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
+    ElCard: typeof import('element-plus/es')['ElCard']
+    ElProgress: typeof import('element-plus/es')['ElProgress']
     LikeBtn: typeof import('./src/components/LikeBtn.vue')['default']
+    RouterLink: typeof import('vue-router')['RouterLink']
+    RouterView: typeof import('vue-router')['RouterView']
     TheWelcome: typeof import('./src/components/TheWelcome.vue')['default']
   }
 }

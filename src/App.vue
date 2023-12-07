@@ -1,69 +1,38 @@
 <template>
-  <div class="center">
-    <div class="audio" @click="togglePlayback" v-show="!state.isShow">
-      <Microphone v-if="birthdayMusic.isPlaying.value" />
-      <Mute v-else />
-    </div>
-
-    <Login @showLogin="showLogin" v-if="state.isShow" />
-    <div>
-      <BirthdayCake v-if="!state.isShow" :name="state.name" />
-    </div>
-  </div>
+  <router-view />
 </template>
+<script setup></script>
 
-<script setup lang="ts">
-import { Microphone, Mute } from "@element-plus/icons-vue";
-import { reactive, onMounted } from "vue";
-
-import BirthdayCake from "@/components/BirthdayCake.vue";
-import Login from "@/components/index.vue";
-import { useSound } from "@vueuse/sound";
-
-const birthdayMusic = useSound("/Happy-Birthday/audio/happy-birthday.mp3");
-
-const state = reactive({
-  isShow: true,
-  name: "",
-});
-
-const togglePlayback = () => {
-  birthdayMusic.isPlaying.value ? birthdayMusic.pause() : birthdayMusic.play();
-};
-
-const showLogin = (name: string) => {
-  state.name = name;
-  state.isShow = !state.isShow;
-  togglePlayback();
-};
-</script>
-
-<style scoped>
-.center {
-  height: 100vh;
+<style lang="scss">
+* {
+  padding: 0;
+  margin: 0;
 }
-.audio {
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  z-index: 999;
-  width: 24px;
-  color: #fff;
+a {
+  color: inherit;
+  text-decoration: none;
+}
+/* 对于Webkit浏览器如Chrome和Safari */
+::-webkit-scrollbar {
+  width: 2px; /* 宽度 */
+  height: 2px; /* 高度（对于水平滚动条） */
 }
 
-.rotate {
-  animation: zoomInAndOut 2s infinite;
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* 轨迹颜色 */
 }
 
-@keyframes zoomInAndOut {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.2);
-  }
-  100% {
-    transform: scale(1);
-  }
+::-webkit-scrollbar-thumb {
+  background: #b78e81; /* 滑块颜色 */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b78e81; /* 鼠标悬停时滑块颜色 */
+}
+
+/* 对于Firefox */
+* {
+  scrollbar-width: thin; /* 滚动条宽度 */
+  scrollbar-color: #b78e81 #f1f1f1; /* 滚动条颜色：滑块颜色 + 轨迹颜色 */
 }
 </style>
