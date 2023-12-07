@@ -58,7 +58,7 @@
             :color="colors"
             class="mb20"
           >
-            默契度
+            <span class="text-color"> 默契度</span>
           </el-progress>
           <el-progress
             :percentage="state.happy"
