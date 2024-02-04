@@ -8,8 +8,7 @@ const name = () => import("@/views/Name/NameTest.vue");
 const home = () => import("@/views/Home/index.vue");
 
 const routes: Array<RouteRecordRaw> = [
-  { path: "/", redirect: "/Happy-Birthday/home" },
-  { path: "/Happy-Birthday", redirect: "/" },
+  { path: "/", redirect: "/Happy-Birthday/birthday" },
   {
     path: "/Happy-Birthday/home",
     component: home,
