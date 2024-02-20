@@ -6,8 +6,6 @@
 
 ## 展示
 
-![示例图片](src/assets/index.png)
-
 ![示例图片](src/assets/who.png)
 
 ![示例图片](src/assets/main.png)
