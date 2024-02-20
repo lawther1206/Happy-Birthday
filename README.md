@@ -1,4 +1,4 @@
-# test-BirthdayCake
+# BirthdayCake
 
 纯前端项目，参考来自@云游君(https://github.com/YunYouJun)
 
